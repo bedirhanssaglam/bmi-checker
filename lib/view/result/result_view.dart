@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:kartal/kartal.dart';
 import 'package:sizer/sizer.dart';
 
-import 'package:bmi_check/core/components/animatedText/animated_text.dart';
 import 'package:bmi_check/core/components/button/button_widget.dart';
 import 'package:bmi_check/core/components/text/custom_text.dart';
 import 'package:bmi_check/core/constants/app/app_constants.dart';
@@ -13,6 +12,7 @@ import 'package:bmi_check/core/extensions/num_extensions.dart';
 import 'package:bmi_check/view/home/widgets/advice_card.dart';
 
 import '../../core/components/scaffold/custom_scaffold.dart';
+import 'widgets/result_header_card.dart';
 
 class ResultView extends StatelessWidget {
   const ResultView({
@@ -44,36 +44,7 @@ class ResultView extends StatelessWidget {
             ),
           ),
           2.h.ph,
-          Container(
-            height: 17.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: AppConstants.instance.spectra.withOpacity(.2),
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(2.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  1.h.ph,
-                  name != null
-                      ? AnimatedText(
-                          "Dear $name,",
-                          textStyle: context.textTheme.headline2,
-                        )
-                      : const AnimatedText(
-                          "Dear,",
-                        ),
-                  1.h.ph,
-                  CustomText(
-                    explanation,
-                    textStyle: context.textTheme.headline1,
-                  ),
-                ],
-              ),
-            ),
-          ),
+          ResultHeaderCard(name: name, explanation: explanation),
           2.h.ph,
           Align(
             alignment: Alignment.center,

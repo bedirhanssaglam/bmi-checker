@@ -25,7 +25,7 @@ class IntroHeader extends StatelessWidget {
         ),
         5.h.ph,
         CustomText(
-          "BMI Check",
+          "My BMI Checker",
           textStyle: context.textTheme.headline2,
         ),
         5.h.ph,

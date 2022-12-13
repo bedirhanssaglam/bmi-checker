@@ -11,15 +11,19 @@ import 'core/init/routes/routes.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+ _init();
   runApp(
     MultiProvider(
       providers: DependencyInjector.instance.otherProviders,
       child: const MyApp(),
     ),
+  );
+}
+
+Future<void> _init() async {
+   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 }
 

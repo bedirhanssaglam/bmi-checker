@@ -1,6 +1,6 @@
 import 'package:bmi_check/core/constants/enums/navigation_enums.dart';
 import 'package:bmi_check/core/extensions/string_extensions.dart';
-import 'package:bmi_check/view/daily_schedule/weaken/widgets/weaken_card.dart';
+import 'package:bmi_check/view/daily_schedules/weaken/widgets/weaken_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

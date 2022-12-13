@@ -1,5 +1,5 @@
 name: bmi_check
-description: A new Flutter project.
+description: An application that calculates the body mass index and makes some suggestions.
 
 publish_to: 'none' 
 

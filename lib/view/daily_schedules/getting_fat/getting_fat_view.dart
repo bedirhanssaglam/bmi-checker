@@ -1,6 +1,6 @@
 import 'package:bmi_check/core/components/text/custom_text.dart';
 import 'package:bmi_check/core/extensions/string_extensions.dart';
-import 'package:bmi_check/view/daily_schedule/getting_fat/widgets/getting_fat_card.dart';
+import 'package:bmi_check/view/daily_schedules/getting_fat/widgets/getting_fat_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

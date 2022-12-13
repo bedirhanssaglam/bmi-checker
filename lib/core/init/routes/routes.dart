@@ -4,8 +4,8 @@ import 'package:bmi_check/view/splash/splash_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../view/daily_schedule/getting_fat/getting_fat_view.dart';
-import '../../../view/daily_schedule/weaken/weaken_view.dart';
+import '../../../view/daily_schedules/getting_fat/getting_fat_view.dart';
+import '../../../view/daily_schedules/weaken/weaken_view.dart';
 import '../../../view/intro/intro_view.dart';
 import '../../../view/result/result_view.dart';
 import '../../base/functions/base_functions.dart';
