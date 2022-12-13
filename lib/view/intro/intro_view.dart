@@ -1,4 +1,5 @@
 import 'package:bmi_check/core/components/text/custom_text.dart';
+import 'package:bmi_check/core/constants/enums/image_enums.dart';
 import 'package:bmi_check/core/extensions/num_extensions.dart';
 import 'package:bmi_check/core/extensions/string_extensions.dart';
 import 'package:bmi_check/view/intro/provider/current_page.dart';
@@ -18,23 +19,6 @@ class IntroView extends StatelessWidget {
 
   final PageController pageController = PageController(initialPage: 0);
 
-  final List<Map<String, String>> splashData = [
-    {
-      "text":
-          "Health has a special importance in maintaining human life, improving and protecting the quality of life.It should not be forgotten that the protection and development of health is possible primarily by the person taking care of his own health and developing health awareness.",
-      "image": "first_intro",
-    },
-    {
-      "text":
-          "With this application you will use, you will be able to calculate your body mass index, read blog posts and access the sample diet program. After the reminder text, let's get started!",
-      "image": "second_intro"
-    },
-    {
-      "text":
-          "The data are calculated according to the figures published by the World Health Organization. This calculation is for information purposes. Consult your physician for medical diagnosis and treatment.",
-      "image": "third_intro"
-    },
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,10 +39,11 @@ class IntroView extends StatelessWidget {
                             .read<CurrentPageProvider>()
                             .setCurrentPage(value);
                       },
-                      itemCount: splashData.length,
+                      itemCount: AppConstants.instance.splashData.length,
                       itemBuilder: (context, index) => IntroHeader(
-                        image: splashData[index]["image"]!,
-                        text: splashData[index]['text']!,
+                        image: AppConstants.instance.splashData[index]
+                            ["image"]!,
+                        text: AppConstants.instance.splashData[index]['text']!,
                       ),
                     );
                   },
@@ -75,7 +60,7 @@ class IntroView extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(
-                                splashData.length,
+                                AppConstants.instance.splashData.length,
                                 (index) {
                                   return buildPageDots(context, index);
                                 },
@@ -97,7 +82,7 @@ class IntroView extends StatelessWidget {
                                   ),
                                   2.w.pw,
                                   SvgPicture.asset(
-                                    "arrow_forward".toSvg,
+                                    ImageEnums.arrowForward.imageName.toSvg,
                                     height: 13.sp,
                                   ),
                                 ],

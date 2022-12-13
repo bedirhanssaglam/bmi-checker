@@ -22,6 +22,7 @@ class _AnimatedTextState extends State<AnimatedText>
     duration: const Duration(seconds: 2),
     vsync: this,
   )..forward();
+
   late final Animation<double> _animation = CurvedAnimation(
     parent: _controller,
     curve: Curves.fastOutSlowIn,

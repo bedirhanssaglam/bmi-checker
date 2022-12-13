@@ -8,6 +8,7 @@ import 'package:lottie/lottie.dart';
 import 'package:sizer/sizer.dart';
 import 'package:kartal/kartal.dart';
 
+import '../../core/constants/app/app_constants.dart';
 import '../../core/constants/enums/image_enums.dart';
 import '../../firebase_options.dart';
 
@@ -37,7 +38,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  _init() async {
+  Future<void> _init() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -70,7 +71,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
               },
             ),
             CustomText(
-              "My BMI Checker",
+              AppConstants.instance.appName,
               textStyle: context.textTheme.headline2?.copyWith(
                 fontWeight: FontWeight.w600,
                 fontSize: 20.sp,

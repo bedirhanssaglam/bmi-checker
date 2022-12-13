@@ -5,7 +5,10 @@ class Calculator {
   final int weight;
   double bmi = 0.0;
 
-  Calculator({required this.height, required this.weight});
+  Calculator({
+    required this.height,
+    required this.weight,
+  });
 
   String calculate() {
     bmi = weight / (pow(height / 100, 2));

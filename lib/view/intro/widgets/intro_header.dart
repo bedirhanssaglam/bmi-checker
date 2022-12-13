@@ -1,3 +1,4 @@
+import 'package:bmi_check/core/constants/app/app_constants.dart';
 import 'package:bmi_check/core/extensions/num_extensions.dart';
 import 'package:bmi_check/core/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class IntroHeader extends StatelessWidget {
         ),
         5.h.ph,
         CustomText(
-          "My BMI Checker",
+          AppConstants.instance.appName,
           textStyle: context.textTheme.headline2,
         ),
         5.h.ph,

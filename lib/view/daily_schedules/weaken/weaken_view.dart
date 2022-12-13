@@ -8,6 +8,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../core/base/functions/base_functions.dart';
 import '../../../core/base/service/fire_service.dart';
+import '../../../core/constants/enums/image_enums.dart';
 
 class WeakenView extends StatefulWidget {
   const WeakenView({super.key});
@@ -58,7 +59,7 @@ class _WeakenViewState extends State<WeakenView> {
     return AppBar(
       centerTitle: true,
       title: Image.asset(
-        "appbar".toPng,
+        ImageEnums.appbar.imageName.toPng,
         height: 6.h,
       ),
       elevation: 3,

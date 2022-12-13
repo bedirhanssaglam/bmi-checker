@@ -34,12 +34,10 @@ class _AdviceCardState extends State<AdviceCard> {
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           color: AppConstants.instance.spectra,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: const Offset(0, 0),
+              offset: Offset(0, 0),
+              blurRadius: 3,
             ),
           ],
         ),

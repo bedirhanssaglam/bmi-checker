@@ -1,4 +1,5 @@
 import 'package:bmi_check/core/components/text/custom_text.dart';
+import 'package:bmi_check/core/constants/enums/image_enums.dart';
 import 'package:bmi_check/core/extensions/string_extensions.dart';
 import 'package:bmi_check/view/daily_schedules/getting_fat/widgets/getting_fat_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -76,7 +77,7 @@ class _GettingFatViewState extends State<GettingFatView> {
     return AppBar(
       centerTitle: true,
       title: Image.asset(
-        "appbar".toPng,
+        ImageEnums.appbar.imageName.toPng,
         height: 6.h,
       ),
       elevation: 3,

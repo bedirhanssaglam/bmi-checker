@@ -38,14 +38,14 @@ IconButton platformBackButton({
 }
 
 Widget errorText(String errorMessage) {
-  return Center(child: CustomText(errorMessage));
+  return Center(
+    child: CustomText(errorMessage),
+  );
 }
 
 logControl(String message) {
   developer.log(message);
 }
-
-void logError(String? value) => developer.log("[ERROR] ${value ?? ""}");
 
 animatedRouting({
   required GoRouterState state,
@@ -54,8 +54,12 @@ animatedRouting({
     CustomTransitionPage<void>(
       key: state.pageKey,
       child: route,
-      transitionsBuilder: (BuildContext context, Animation<double> animation,
-              Animation<double> secondaryAnimation, Widget child) =>
+      transitionsBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        Widget child,
+      ) =>
           SlideTransition(
         position: animation.drive(
           Tween<Offset>(

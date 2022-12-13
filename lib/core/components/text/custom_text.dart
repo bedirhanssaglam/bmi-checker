@@ -8,9 +8,13 @@ class CustomText extends StatelessWidget {
   final TextAlign? textAlign;
   final int? maxLines;
 
-  const CustomText(this.text,
-      {Key? key, this.textStyle, this.textAlign, this.maxLines})
-      : super(key: key);
+  const CustomText(
+    this.text, {
+    Key? key,
+    this.textStyle,
+    this.textAlign,
+    this.maxLines,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'package:bmi_check/core/constants/enums/image_enums.dart';
 import 'package:bmi_check/core/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -23,7 +24,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       centerTitle: true,
       title: Image.asset(
-        "appbar".toPng,
+        ImageEnums.appbar.imageName.toPng,
         height: 6.h,
       ),
       elevation: 3,
