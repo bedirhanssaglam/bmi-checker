@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../constants/app/app_constants.dart';
+import '../../base/singleton/base_singleton.dart';
 import '../../utils/typedefs.dart';
 import '../text/custom_text.dart';
 
-class CustomSlider extends StatelessWidget {
+class CustomSlider extends StatefulWidget {
   const CustomSlider({
     Key? key,
     required this.currentValue,
@@ -25,15 +25,20 @@ class CustomSlider extends StatelessWidget {
   final double? max;
 
   @override
+  State<CustomSlider> createState() => _CustomSliderState();
+}
+
+class _CustomSliderState extends State<CustomSlider> with BaseSingleton {
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        title != null
+        widget.title != null
             ? Padding(
                 padding: const EdgeInsets.only(bottom: 5),
                 child: CustomText(
-                  title!,
+                  widget.title!,
                   textStyle: context.textTheme.bodyText2,
                 ),
               )
@@ -41,18 +46,18 @@ class CustomSlider extends StatelessWidget {
         Container(
           height: 5.h,
           decoration: BoxDecoration(
-            color: AppConstants.instance.spectra.withOpacity(.3),
+            color: constants.spectra.withOpacity(.3),
             borderRadius: const BorderRadius.all(Radius.circular(10)),
           ),
           child: Slider(
-            inactiveColor: AppConstants.instance.spectra.withOpacity(.4),
-            activeColor: AppConstants.instance.spectra,
-            value: currentValue,
-            min: min!,
-            max: max!,
-            divisions: (max! - min!).toInt(),
-            label: "${currentValue.round().toString()} $unit",
-            onChanged: onChanged,
+            inactiveColor: constants.spectra.withOpacity(.4),
+            activeColor: constants.spectra,
+            value: widget.currentValue,
+            min: widget.min!,
+            max: widget.max!,
+            divisions: (widget.max! - widget.min!).toInt(),
+            label: "${widget.currentValue.round().toString()} ${widget.unit}",
+            onChanged: widget.onChanged,
           ),
         ),
       ],

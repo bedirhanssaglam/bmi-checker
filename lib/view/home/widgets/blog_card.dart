@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../core/base/singleton/base_singleton.dart';
 import '../../../core/components/text/custom_text.dart';
-import '../../../core/constants/app/app_constants.dart';
 
-class BlogCard extends StatelessWidget {
+class BlogCard extends StatelessWidget with BaseSingleton {
   const BlogCard({
     Key? key,
     required this.imagePath,
@@ -27,7 +27,7 @@ class BlogCard extends StatelessWidget {
         width: 43.w,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
-          color: AppConstants.instance.spectra,
+          color: constants.spectra,
           boxShadow: const [
             BoxShadow(
               offset: Offset(0, 0),
@@ -53,7 +53,7 @@ class BlogCard extends StatelessWidget {
                 height: 4.h,
                 width: 25.w,
                 decoration: BoxDecoration(
-                  color: AppConstants.instance.wildSand.withOpacity(.5),
+                  color: constants.wildSand.withOpacity(.5),
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                 ),
                 child: Center(

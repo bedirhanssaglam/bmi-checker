@@ -14,15 +14,14 @@ class FireService extends IFireService {
   @override
   Stream<QuerySnapshot> fetchWeakenAdvices() {
     var ref =
-        _firestore.collection(NetworkEnums.weaken_advices.name).snapshots();
+        _firestore.collection(NetworkEnums.weakenAdvices.name).snapshots();
     return ref;
   }
 
   @override
   Stream<QuerySnapshot> fetchGettingFatAdvices() {
-    var ref = _firestore
-        .collection(NetworkEnums.getting_fat_advices.name)
-        .snapshots();
+    var ref =
+        _firestore.collection(NetworkEnums.gettingFatAdvices.name).snapshots();
     return ref;
   }
 

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../core/base/singleton/base_singleton.dart';
 import '../../../core/components/animatedText/animated_text.dart';
 import '../../../core/components/text/custom_text.dart';
-import '../../../core/constants/app/app_constants.dart';
 
-class ResultHeaderCard extends StatelessWidget {
+class ResultHeaderCard extends StatelessWidget with BaseSingleton {
   const ResultHeaderCard({
     Key? key,
     this.name,
@@ -23,7 +23,7 @@ class ResultHeaderCard extends StatelessWidget {
       height: 17.h,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppConstants.instance.spectra.withOpacity(.2),
+        color: constants.spectra.withOpacity(.2),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Padding(

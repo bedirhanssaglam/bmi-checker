@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../network/no_network_widget.dart';
+import '../../components/noNetwork/no_network_widget.dart';
 
 class MainBuild extends StatelessWidget {
   const MainBuild({super.key, this.child});

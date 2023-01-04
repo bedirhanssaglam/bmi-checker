@@ -1,13 +1,13 @@
-import 'package:bmi_check/core/constants/app/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kartal/kartal.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../base/singleton/base_singleton.dart';
 import '../../utils/typedefs.dart';
 import '../text/custom_text.dart';
 
-class TextFormFieldWidget extends StatelessWidget {
+class TextFormFieldWidget extends StatelessWidget with BaseSingleton {
   final String? hintText;
   final double? width;
   final double? height;
@@ -67,11 +67,11 @@ class TextFormFieldWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             filled: true,
-            fillColor: AppConstants.instance.wildSand,
-            hoverColor: AppConstants.instance.spectra,
+            fillColor: constants.wildSand,
+            hoverColor: constants.spectra,
             contentPadding: EdgeInsets.all(10.sp),
             hintStyle: context.textTheme.subtitle2?.copyWith(
-                color: AppConstants.instance.emperor.withOpacity(.7),
+                color: constants.emperor.withOpacity(.7),
                 fontSize: fontSize!.sp,
                 fontWeight: hintTextFontWeight),
             border: OutlineInputBorder(
@@ -88,7 +88,7 @@ class TextFormFieldWidget extends StatelessWidget {
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(borderRadius!)),
-              borderSide: BorderSide(color: AppConstants.instance.carnation),
+              borderSide: BorderSide(color: constants.carnation),
             ),
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(borderRadius!)),

@@ -1,7 +1,10 @@
 enum NetworkEnums {
-  weaken_advices,
-  getting_fat_advices,
-  sleeping,
-  sporting,
-  balanced_diet,
+  weakenAdvices('weaken_advices'),
+  gettingFatAdvices('getting_fat_advices'),
+  sleeping('sleeping'),
+  sporting('sporting'),
+  balancedDiet('balanced_diet');
+
+  final String routeName;
+  const NetworkEnums(this.routeName);
 }

@@ -6,15 +6,15 @@ import 'package:sizer/sizer.dart';
 
 import 'package:bmi_check/core/components/button/button_widget.dart';
 import 'package:bmi_check/core/components/text/custom_text.dart';
-import 'package:bmi_check/core/constants/app/app_constants.dart';
 import 'package:bmi_check/core/constants/enums/navigation_enums.dart';
 import 'package:bmi_check/core/extensions/num_extensions.dart';
 import 'package:bmi_check/view/home/widgets/advice_card.dart';
 
+import '../../core/base/singleton/base_singleton.dart';
 import '../../core/components/scaffold/custom_scaffold.dart';
 import 'widgets/result_header_card.dart';
 
-class ResultView extends StatelessWidget {
+class ResultView extends StatelessWidget with BaseSingleton {
   const ResultView({
     Key? key,
     this.bmi,
@@ -40,7 +40,7 @@ class ResultView extends StatelessWidget {
           CustomText(
             "Results",
             textStyle: context.textTheme.headline2?.copyWith(
-              color: AppConstants.instance.spectra,
+              color: constants.spectra,
             ),
           ),
           2.h.ph,
@@ -64,7 +64,7 @@ class ResultView extends StatelessWidget {
           ButtonWidget(
             onTap: () => context.go(NavigationEnums.home.routeName),
             text: "Recalculate",
-            buttonColor: AppConstants.instance.spectra,
+            buttonColor: constants.spectra,
           ),
           3.h.ph,
           CustomText(

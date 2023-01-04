@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../base/singleton/base_singleton.dart';
 import '../../components/text/custom_text.dart';
-import '../../constants/app/app_constants.dart';
 import '../../constants/enums/network_result_enums.dart';
-import 'network_change_manager.dart';
+import '../../init/network/network_change_manager.dart';
 
 class NoNetworkWidget extends StatefulWidget {
   const NoNetworkWidget({super.key});
@@ -17,7 +17,7 @@ class NoNetworkWidget extends StatefulWidget {
 }
 
 class _NoNetworkWidgetState extends State<NoNetworkWidget>
-    with TickerProviderStateMixin {
+    with BaseSingleton, TickerProviderStateMixin {
   late final INetworkChangeManager _networkChange;
   late final AnimationController _controller;
   NetworkResultEnums? _networkResult;
@@ -86,7 +86,7 @@ class _NoNetworkWidgetState extends State<NoNetworkWidget>
                 textStyle: TextStyle(
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w500,
-                  color: AppConstants.instance.mineShaft,
+                  color: constants.mineShaft,
                 ),
               ),
             ],

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../constants/app/app_constants.dart';
+import '../../base/singleton/base_singleton.dart';
 import '../text/custom_text.dart';
 
 class CustomDropdown extends StatefulWidget {
@@ -36,7 +36,7 @@ class CustomDropdown extends StatefulWidget {
   State<CustomDropdown> createState() => _CustomDropdownState();
 }
 
-class _CustomDropdownState extends State<CustomDropdown> {
+class _CustomDropdownState extends State<CustomDropdown> with BaseSingleton {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -91,7 +91,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
                     child: CustomText(
                       value,
                       textStyle: TextStyle(
-                        color: AppConstants.instance.mineShaft,
+                        color: constants.mineShaft,
                         fontSize: 12.sp,
                       ),
                     ),

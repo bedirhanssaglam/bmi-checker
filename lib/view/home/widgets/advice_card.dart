@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../core/base/singleton/base_singleton.dart';
 import '../../../core/components/text/custom_text.dart';
-import '../../../core/constants/app/app_constants.dart';
 
 class AdviceCard extends StatefulWidget {
   const AdviceCard({
@@ -23,7 +23,7 @@ class AdviceCard extends StatefulWidget {
   State<AdviceCard> createState() => _AdviceCardState();
 }
 
-class _AdviceCardState extends State<AdviceCard> {
+class _AdviceCardState extends State<AdviceCard> with BaseSingleton {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -33,7 +33,7 @@ class _AdviceCardState extends State<AdviceCard> {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
-          color: AppConstants.instance.spectra,
+          color: constants.spectra,
           boxShadow: const [
             BoxShadow(
               offset: Offset(0, 0),
@@ -52,7 +52,7 @@ class _AdviceCardState extends State<AdviceCard> {
             CustomText(
               widget.text,
               textStyle: context.textTheme.headline1?.copyWith(
-                color: AppConstants.instance.wildSand,
+                color: constants.wildSand,
               ),
             ),
           ],

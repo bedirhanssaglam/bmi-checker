@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../core/base/singleton/base_singleton.dart';
 import '../../../../core/components/text/custom_text.dart';
-import '../../../../core/constants/app/app_constants.dart';
 
-class WeakenCard extends StatelessWidget {
+class WeakenCard extends StatelessWidget with BaseSingleton {
   const WeakenCard({
     Key? key,
     required this.doc,
@@ -36,7 +36,7 @@ class WeakenCard extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.all(8.sp),
             decoration: BoxDecoration(
-              color: AppConstants.instance.spectra.withOpacity(.5),
+              color: constants.spectra.withOpacity(.5),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
             child: Column(

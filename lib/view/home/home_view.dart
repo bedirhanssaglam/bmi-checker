@@ -5,10 +5,10 @@ import 'package:bmi_check/core/components/button/button_widget.dart';
 import 'package:bmi_check/core/components/dropdownButton/custom_dropdown.dart';
 import 'package:bmi_check/core/components/text/custom_text.dart';
 import 'package:bmi_check/core/components/textFormField/text_form_field_widget.dart';
-import 'package:bmi_check/core/constants/app/app_constants.dart';
 import 'package:bmi_check/core/extensions/num_extensions.dart';
 import 'package:bmi_check/core/utils/calculator.dart';
 import 'package:flutter/services.dart';
+import '../../core/base/singleton/base_singleton.dart';
 import '../../core/components/scaffold/custom_scaffold.dart';
 import '../../core/components/slider/custom_slider.dart';
 import '../../core/constants/enums/navigation_enums.dart';
@@ -26,7 +26,7 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeViewState extends State<HomeView> with BaseSingleton {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   double _currentHeightValue = 100;
@@ -125,9 +125,9 @@ class _HomeViewState extends State<HomeView> {
             title: "Your gender",
             hint: "Male",
             value: gender,
-            iconColor: AppConstants.instance.spectra,
+            iconColor: constants.spectra,
             width: 40,
-            backgroundColor: AppConstants.instance.wildSand,
+            backgroundColor: constants.wildSand,
             items: genderList.map((item) => item).toList(),
             onChanged: (value) {
               setState(() {
@@ -153,7 +153,7 @@ class _HomeViewState extends State<HomeView> {
               } else {}
             },
             text: "Calculate",
-            buttonColor: AppConstants.instance.spectra,
+            buttonColor: constants.spectra,
           ),
           3.h.ph,
         ],

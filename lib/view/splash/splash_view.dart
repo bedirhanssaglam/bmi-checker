@@ -8,7 +8,7 @@ import 'package:lottie/lottie.dart';
 import 'package:sizer/sizer.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../core/constants/app/app_constants.dart';
+import '../../core/base/singleton/base_singleton.dart';
 import '../../core/constants/enums/image_enums.dart';
 import '../../firebase_options.dart';
 
@@ -19,7 +19,8 @@ class SplashView extends StatefulWidget {
   State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
+class _SplashViewState extends State<SplashView>
+    with BaseSingleton, TickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -71,7 +72,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
               },
             ),
             CustomText(
-              AppConstants.instance.appName,
+              constants.appName,
               textStyle: context.textTheme.headline2?.copyWith(
                 fontWeight: FontWeight.w600,
                 fontSize: 20.sp,

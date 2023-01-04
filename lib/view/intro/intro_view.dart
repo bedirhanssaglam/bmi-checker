@@ -11,10 +11,10 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../core/constants/app/app_constants.dart';
+import '../../core/base/singleton/base_singleton.dart';
 import '../../core/constants/enums/navigation_enums.dart';
 
-class IntroView extends StatelessWidget {
+class IntroView extends StatelessWidget with BaseSingleton {
   IntroView({super.key});
 
   final PageController pageController = PageController(initialPage: 0);
@@ -39,11 +39,10 @@ class IntroView extends StatelessWidget {
                             .read<CurrentPageProvider>()
                             .setCurrentPage(value);
                       },
-                      itemCount: AppConstants.instance.splashData.length,
+                      itemCount: constants.splashData.length,
                       itemBuilder: (context, index) => IntroHeader(
-                        image: AppConstants.instance.splashData[index]
-                            ["image"]!,
-                        text: AppConstants.instance.splashData[index]['text']!,
+                        image: constants.splashData[index]["image"]!,
+                        text: constants.splashData[index]['text']!,
                       ),
                     );
                   },
@@ -60,7 +59,7 @@ class IntroView extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(
-                                AppConstants.instance.splashData.length,
+                                constants.splashData.length,
                                 (index) {
                                   return buildPageDots(context, index);
                                 },
@@ -76,7 +75,7 @@ class IntroView extends StatelessWidget {
                                     "Skip",
                                     textStyle:
                                         context.textTheme.headline1?.copyWith(
-                                      color: AppConstants.instance.spectra,
+                                      color: constants.spectra,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
@@ -112,8 +111,8 @@ class IntroView extends StatelessWidget {
           : 2.5.w,
       decoration: BoxDecoration(
         color: context.watch<CurrentPageProvider>().currentPage == index
-            ? AppConstants.instance.spectra
-            : AppConstants.instance.silver,
+            ? constants.spectra
+            : constants.silver,
         borderRadius: BorderRadius.circular(3),
       ),
     );
