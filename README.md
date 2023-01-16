@@ -2,7 +2,9 @@
 
 An application that calculates the body mass index and makes some suggestions.
 
-# Application Screenshots
+# Application Video & Screenshots
+
+https://user-images.githubusercontent.com/105479937/212701235-38ab3732-b9b2-428a-85b1-3557e5c21bb2.mp4
 
 ![app_screenshots](https://user-images.githubusercontent.com/105479937/207308161-62731a7a-95ca-4cf5-9415-0b9885ea3f7c.png)
 
